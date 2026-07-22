@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>超创人才发掘平台</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f0f4f8;
+    color: #1a202c;
+  }
+
+  /* Header */
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .header-title { font-size: 18px; font-weight: 700; color: #1a202c; }
+  .header-subtitle { font-size: 13px; color: #718096; }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+
+  /* View Toggle */
+  .view-toggle {
+    display: flex;
+    background: #edf2f7;
+    border-radius: 8px;
+    padding: 3px;
+  }
+  .view-btn {
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: #4a5568;
+  }
+  .view-btn.active {
+    background: #fff;
+    color: #2b6cb0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .view-btn:hover:not(.active) { color: #2d3748; }
+
+  /* Container */
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+  /* Summary Bar */
+  .summary-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .summary-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .summary-card.active {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 2px rgba(49,130,206,0.15);
+  }
+  .summary-card .top-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .summary-label { font-size: 12px; color: #718096; margin-bottom: 4px; }
+  .summary-value { font-size: 22px; font-weight: 700; color: #1a202c; }
+
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filter-group { display: flex; align-items: center; gap: 6px; }
+  .filter-label { font-size: 13px; color: #4a5568; font-weight: 500; }
+  .filter-select {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #2d3748;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  .filter-select:focus { border-color: #3182ce; }
+  .filter-input {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #2d3748;
+    outline: none;
+    width: 140px;
+  }
+  .filter-input:focus { border-color: #3182ce; }
+  .filter-reset {
+    margin-left: auto;
+    color: #3182ce;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 500;
+  }
+  .filter-reset:hover { text-decoration: underline; }
+
+  /* Toolbar */
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .toolbar-count { font-size: 14px; color: #718096; }
+
+  /* Creator Card */
+  .creator-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .creator-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f7fafc;
+  }
+  .card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .creator-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 18px; font-weight: 600;
+  }
+  .creator-info { display: flex; flex-direction: column; gap: 2px; }
+  .creator-name { font-size: 16px; font-weight: 600; color: #1a202c; }
+  .creator-meta { font-size: 13px; color: #718096; display: flex; gap: 12px; align-items: center; }
+  .platform-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #fed7d7;
+    color: #c53030;
+  }
+  .platform-badge.douyin { background: #000; color: #fff; }
+  .platform-badge.xiaohongshu { background: #ff2442; color: #fff; }
+  .platform-badge.bilibili { background: #00a1d6; color: #fff; }
+  .platform-badge.kuaishou { background: #ff5e00; color: #fff; }
+
+  .card-header-right { display: flex; align-items: center; gap: 10px; }
+  .status-light {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+  }
+  .status-light.green { background: #c6f6d5; color: #22543d; }
+  .status-light.yellow { background: #fefcbf; color: #744210; }
+  .status-light.red { background: #fed7d7; color: #742a2a; }
+  .status-light .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .status-light.green .dot { background: #38a169; }
+  .status-light.yellow .dot { background: #d69e2e; }
+  .status-light.red .dot { background: #e53e3e; }
+
+  .recommend-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .card-body { padding: 16px 20px; }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .info-item { display: flex; flex-direction: column; gap: 3px; }
+  .info-label { font-size: 12px; color: #a0aec0; font-weight: 500; }
+  .info-value { font-size: 14px; color: #2d3748; font-weight: 500; }
+  .info-value a { color: #3182ce; text-decoration: none; }
+  .info-value a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+  .highlight-box .box-label {
+    font-size: 12px; color: #718096; font-weight: 600; margin-bottom: 6px;
+  }
+  .highlight-box .box-content {
+    font-size: 13px; color: #2d3748; line-height: 1.6;
+  }
+
+  /* Internal-only section */
+  .internal-section {
+    border-top: 1px dashed #e2e8f0;
+    padding: 14px 20px;
+    background: #fafbfc;
+  }
+  .internal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .internal-item { display: flex; flex-direction: column; gap: 2px; }
+  .internal-label { font-size: 11px; color: #a0aec0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+  .internal-value { font-size: 13px; color: #4a5568; }
+
+  .stage-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .stage-tag.following { background: #bee3f8; color: #2a4365; }
+  .stage-tag.signing { background: #fefcbf; color: #744210; }
+  .stage-tag.signed { background: #c6f6d5; color: #22543d; }
+  .stage-tag.rejected { background: #e2e8f0; color: #4a5568; }
+
+  /* Signed badge */
+  .signed-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600;
+    background: #e9d8fd; color: #553c9a;
+  }
+
+  /* Back to top */
+  #back-to-top {
+    position: fixed; bottom: 30px; right: 30px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #3182ce; color: #fff;
+    border: none; cursor: pointer;
+    font-size: 18px;
+    display: none;
+    align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(49,130,206,0.3);
+    transition: all 0.2s;
+  }
+  #back-to-top.visible { display: flex; }
+  #back-to-top:hover { transform: scale(1.1); }
+
+  /* Hidden in external view */
+  body.external-view .internal-only { display: none !important; }
+  body.external-view .internal-section { display: none !important; }
+</style>
+</head>
+<body class="internal-view">
+
+<div class="header">
+  <div class="header-left">
+    <div>
+      <div class="header-title">超创人才发掘平台</div>
+      <div class="header-subtitle">AI创作者跟进与管理</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="view-toggle">
+      <button class="view-btn active" onclick="setView('internal')">内部视图</button>
+      <button class="view-btn" onclick="setView('external')">对外展示</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Summary Stats -->
+  <div class="summary-bar">
+    <div class="summary-card" onclick="filterBy('all','all')">
+      <div class="top-bar" style="background: #3182ce;"></div>
+      <div class="summary-label">总创作者</div>
+      <div class="summary-value" id="total-count">1</div>
+    </div>
+    <div class="summary-card" onclick="filterBy('platform','抖音')">
+      <div class="top-bar" style="background: #000;"></div>
+      <div class="summary-label">抖音</div>
+      <div class="summary-value" id="count-douyin">1</div>
+    </div>
+    <div class="summary-card" onclick="filterBy('platform','小红书')">
+      <div class="top-bar" style="background: #ff2442;"></div>
+      <div class="summary-label">小红书</div>
+      <div class="summary-value" id="count-xhs">0</div>
+    </div>
+    <div class="summary-card" onclick="filterBy('platform','B站')">
+      <div class="top-bar" style="background: #00a1d6;"></div>
+      <div class="summary-label">B站</div>
+      <div class="summary-value" id="count-bili">0</div>
+    </div>
+    <div class="summary-card internal-only" onclick="filterBy('status','绿灯-顺利')">
+      <div class="top-bar" style="background: #38a169;"></div>
+      <div class="summary-label">绿灯</div>
+      <div class="summary-value" id="count-green">1</div>
+    </div>
+    <div class="summary-card internal-only" onclick="filterBy('status','黄灯-有风险可解决')">
+      <div class="top-bar" style="background: #d69e2e;"></div>
+      <div class="summary-label">黄灯</div>
+      <div class="summary-value" id="count-yellow">0</div>
+    </div>
+    <div class="summary-card internal-only" onclick="filterBy('status','红灯-预警')">
+      <div class="top-bar" style="background: #e53e3e;"></div>
+      <div class="summary-label">红灯</div>
+      <div class="summary-value" id="count-red">0</div>
+    </div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">平台</span>
+      <select class="filter-select" id="filter-platform" onchange="applyFilters()">
+        <option value="all">全部</option>
+        <option value="抖音">抖音</option>
+        <option value="小红书">小红书</option>
+        <option value="B站">B站</option>
+        <option value="视频号">视频号</option>
+        <option value="快手">快手</option>
+        <option value="微博">微博</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">品类</span>
+      <select class="filter-select" id="filter-category" onchange="applyFilters()">
+        <option value="all">全部</option>
+        <option value="剧集">剧集</option>
+        <option value="动漫">动漫</option>
+        <option value="电影">电影</option>
+      </select>
+    </div>
+    <div class="filter-group internal-only">
+      <span class="filter-label">跟进</span>
+      <select class="filter-select" id="filter-stage" onchange="applyFilters()">
+        <option value="all">全部</option>
+        <option value="跟进中">跟进中</option>
+        <option value="签约中">签约中</option>
+        <option value="已签约">已签约</option>
+        <option value="不合作">不合作</option>
+      </select>
+    </div>
+    <div class="filter-group internal-only">
+      <span class="filter-label">Owner</span>
+      <select class="filter-select" id="filter-owner" onchange="applyFilters()">
+        <option value="all">全部</option>
+        <option value="张三">张三</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <input type="text" class="filter-input" id="filter-name" placeholder="搜索昵称..." oninput="applyFilters()">
+    </div>
+    <button class="filter-reset" onclick="resetFilters()">重置</button>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <span class="toolbar-count" id="visible-count">共 1 位创作者</span>
+  </div>
+
+  <!-- Creator Cards -->
+  <div id="cards-container">
+
+    <!-- Card: AI造梦局 -->
+    <div class="creator-card"
+         data-name="AI造梦局"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="张三"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">AI</div>
+          <div class="creator-info">
+            <div class="creator-name">AI造梦局</div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>156.8万粉丝</span>
+              <span class="signed-badge">已签约-抖音</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">AI影视化内容创作者，用AI重塑经典剧集/电影/动漫世界观，产出高概念短片</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">发现日期</div>
+            <div class="info-value">2026-07-21</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">520万</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">38,600</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">2,140</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://v.douyin.com/xxxxx" target="_blank">查看视频 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">AIGC工作流成熟；世界观还原度高；单条爆款率稳定；粉丝对影视IP粘性强</div>
+        </div>
+      </div>
+
+      <!-- Internal-only section -->
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">Owner</div>
+            <div class="internal-value">张三</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联，等待联合共创新剧AI预告片的档期确认</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 在此添加更多卡片 ===== -->
+    <!-- 复制上面的 creator-card 模板，替换 data-* 属性和卡片内容即可 -->
+
+  </div>
+</div>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+
+<script>
+// View toggle
+function setView(mode) {
+  document.body.className = mode + '-view';
+  document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (mode === 'internal') {
+    document.querySelectorAll('.view-btn')[0].classList.add('active');
+  } else {
+    document.querySelectorAll('.view-btn')[1].classList.add('active');
+  }
+  applyFilters();
+}
+
+// Filters
+function applyFilters() {
+  var platform = document.getElementById('filter-platform').value;
+  var category = document.getElementById('filter-category').value;
+  var stage = document.getElementById('filter-stage').value;
+  var owner = document.getElementById('filter-owner').value;
+  var nameQuery = document.getElementById('filter-name').value.trim().toLowerCase();
+
+  var cards = document.querySelectorAll('.creator-card');
+  var count = 0;
+
+  cards.forEach(function(card) {
+    var show = true;
+    if (platform !== 'all' && card.dataset.platform !== platform) show = false;
+    if (category !== 'all' && card.dataset.category.indexOf(category) === -1) show = false;
+    if (stage !== 'all' && card.dataset.stage !== stage) show = false;
+    if (owner !== 'all' && card.dataset.owner !== owner) show = false;
+    if (nameQuery && card.dataset.name.toLowerCase().indexOf(nameQuery) === -1) show = false;
+
+    card.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+
+  document.getElementById('visible-count').textContent = '共 ' + count + ' 位创作者';
+}
+
+function filterBy(type, value) {
+  // Clear active states
+  document.querySelectorAll('.summary-card.active').forEach(function(c) { c.classList.remove('active'); });
+
+  if (type === 'all') {
+    resetFilters();
+    return;
+  }
+  if (type === 'platform') {
+    document.getElementById('filter-platform').value = value;
+  } else if (type === 'status') {
+    // Find stage from status
+  }
+  event.currentTarget.classList.add('active');
+  applyFilters();
+}
+
+function resetFilters() {
+  document.getElementById('filter-platform').value = 'all';
+  document.getElementById('filter-category').value = 'all';
+  document.getElementById('filter-stage').value = 'all';
+  document.getElementById('filter-owner').value = 'all';
+  document.getElementById('filter-name').value = '';
+  document.querySelectorAll('.summary-card.active').forEach(function(c) { c.classList.remove('active'); });
+  applyFilters();
+}
+
+// Back to top
+(function() {
+  var btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
