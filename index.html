@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>超创人才发掘平台</title>
+<title>超创人才发掘平台 · 7.23重点推荐</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -179,6 +179,7 @@
   }
   .creator-info { display: flex; flex-direction: column; gap: 2px; }
   .creator-name { font-size: 16px; font-weight: 600; color: #1a202c; }
+  .creator-name .work-title { font-size: 14px; font-weight: 500; color: #718096; margin-left: 6px; }
   .creator-meta { font-size: 13px; color: #718096; display: flex; gap: 12px; align-items: center; }
   .platform-badge {
     display: inline-block;
@@ -308,7 +309,7 @@
   <div class="header-left">
     <div>
       <div class="header-title">超创人才发掘平台</div>
-      <div class="header-subtitle">AI创作者跟进与管理</div>
+      <div class="header-subtitle">7.23重点推荐 · 16位创作者</div>
     </div>
   </div>
   <div class="header-right">
@@ -325,32 +326,32 @@
     <div class="summary-card" onclick="filterBy('all','all')">
       <div class="top-bar" style="background: #3182ce;"></div>
       <div class="summary-label">总创作者</div>
-      <div class="summary-value" id="total-count">1</div>
+      <div class="summary-value" id="total-count">16</div>
     </div>
     <div class="summary-card" onclick="filterBy('platform','抖音')">
       <div class="top-bar" style="background: #000;"></div>
       <div class="summary-label">抖音</div>
-      <div class="summary-value" id="count-douyin">1</div>
+      <div class="summary-value" id="count-douyin">12</div>
     </div>
     <div class="summary-card" onclick="filterBy('platform','小红书')">
       <div class="top-bar" style="background: #ff2442;"></div>
       <div class="summary-label">小红书</div>
-      <div class="summary-value" id="count-xhs">0</div>
+      <div class="summary-value" id="count-xhs">1</div>
     </div>
     <div class="summary-card" onclick="filterBy('platform','B站')">
       <div class="top-bar" style="background: #00a1d6;"></div>
       <div class="summary-label">B站</div>
-      <div class="summary-value" id="count-bili">0</div>
+      <div class="summary-value" id="count-bili">3</div>
     </div>
     <div class="summary-card internal-only" onclick="filterBy('status','绿灯-顺利')">
       <div class="top-bar" style="background: #38a169;"></div>
       <div class="summary-label">绿灯</div>
-      <div class="summary-value" id="count-green">1</div>
+      <div class="summary-value" id="count-green">15</div>
     </div>
     <div class="summary-card internal-only" onclick="filterBy('status','黄灯-有风险可解决')">
       <div class="top-bar" style="background: #d69e2e;"></div>
       <div class="summary-label">黄灯</div>
-      <div class="summary-value" id="count-yellow">0</div>
+      <div class="summary-value" id="count-yellow">1</div>
     </div>
     <div class="summary-card internal-only" onclick="filterBy('status','红灯-预警')">
       <div class="top-bar" style="background: #e53e3e;"></div>
@@ -396,7 +397,7 @@
       <span class="filter-label">Owner</span>
       <select class="filter-select" id="filter-owner" onchange="applyFilters()">
         <option value="all">全部</option>
-        <option value="张三">张三</option>
+        <option value="曹程鹏">曹程鹏</option>
       </select>
     </div>
     <div class="filter-group">
@@ -407,37 +408,36 @@
 
   <!-- Toolbar -->
   <div class="toolbar">
-    <span class="toolbar-count" id="visible-count">共 1 位创作者</span>
+    <span class="toolbar-count" id="visible-count">共 16 位创作者</span>
   </div>
 
   <!-- Creator Cards -->
   <div id="cards-container">
 
-    <!-- Card: AI造梦局 -->
     <div class="creator-card"
-         data-name="AI造梦局"
-         data-platform="抖音"
-         data-category="剧集"
+         data-name="都都沉Doc"
+         data-platform="B站"
+         data-category="电影"
          data-stage="跟进中"
          data-status="绿灯-顺利"
-         data-owner="张三"
+         data-owner="曹程鹏"
          data-recommend="重点推荐">
       <div class="card-header">
         <div class="card-header-left">
-          <div class="creator-avatar">AI</div>
+          <div class="creator-avatar">都</div>
           <div class="creator-info">
-            <div class="creator-name">AI造梦局</div>
+            <div class="creator-name">都都沉Doc <span class="work-title">《《换骨》》</span></div>
             <div class="creator-meta">
-              <span class="platform-badge douyin">抖音</span>
-              <span>156.8万粉丝</span>
-              <span class="signed-badge">已签约-抖音</span>
+              <span class="platform-badge bilibili">B站</span>
+              <span>0.5万粉丝</span>
+              <span class="signed-badge">已签约-超创（@商汤Seko AI 品牌合作）</span>
             </div>
           </div>
         </div>
         <div class="card-header-right">
           <span class="recommend-badge">重点推荐</span>
           <span class="status-light green internal-only">
-            <span class="dot"></span>绿灯
+            <span class="dot"></span>绿灯-顺利
           </span>
         </div>
       </div>
@@ -446,49 +446,61 @@
         <div class="info-grid">
           <div class="info-item">
             <div class="info-label">主创简介</div>
-            <div class="info-value">AI影视化内容创作者，用AI重塑经典剧集/电影/动漫世界观，产出高概念短片</div>
+            <div class="info-value">AI视觉构筑作者，商汤Seko AI 签约的超级创作者。《换骨》东方志怪+AI短片，聊斋气质。</div>
           </div>
           <div class="info-item">
             <div class="info-label">匹配品类</div>
-            <div class="info-value">剧集</div>
+            <div class="info-value">电影</div>
           </div>
           <div class="info-item">
-            <div class="info-label">发现日期</div>
-            <div class="info-value">2026-07-21</div>
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 志怪/悬疑</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《聊斋》/《中国奇谭》</div>
           </div>
         </div>
 
         <div class="info-grid">
           <div class="info-item">
             <div class="info-label">代表作播放量</div>
-            <div class="info-value">520万</div>
+            <div class="info-value">30.4</div>
           </div>
           <div class="info-item">
             <div class="info-label">点赞数</div>
-            <div class="info-value">38,600</div>
+            <div class="info-value">14259</div>
           </div>
           <div class="info-item">
             <div class="info-label">评论数</div>
-            <div class="info-value">2,140</div>
+            <div class="info-value">377</div>
           </div>
           <div class="info-item">
             <div class="info-label">代表作品</div>
-            <div class="info-value"><a href="https://v.douyin.com/xxxxx" target="_blank">查看视频 &rarr;</a></div>
+            <div class="info-value"><a href="https://www.bilibili.com/video/BV1Em586XErN/?spm_id_from=333.788.recommend_more_video.18&amp;trackid=web_related_0.router-related-2589621-4d422.1784712065898.152&amp;vd_source=99c46f0c58a9aef16bb71aaf107b0cbb" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
           </div>
         </div>
 
         <div class="highlight-box">
           <div class="box-label">作品亮点</div>
-          <div class="box-content">AIGC工作流成熟；世界观还原度高；单条爆款率稳定；粉丝对影视IP粘性强</div>
+          <div class="box-content">白色断尾蜥蜴&#x27;意象隐喻+聊斋气质，AI视觉与东方美学融合。</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
         </div>
       </div>
 
-      <!-- Internal-only section -->
       <div class="internal-section">
         <div class="internal-grid">
           <div class="internal-item">
-            <div class="internal-label">Owner</div>
-            <div class="internal-value">张三</div>
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">已签约-超创（@商汤Seko AI 品牌合作）</div>
           </div>
           <div class="internal-item">
             <div class="internal-label">跟进阶段</div>
@@ -504,14 +516,1646 @@
           </div>
           <div class="internal-item" style="grid-column: span 2;">
             <div class="internal-label">跟进备注</div>
-            <div class="internal-value">已建联，等待联合共创新剧AI预告片的档期确认</div>
+            <div class="internal-value">已内部签约，可直接进项目储备/短片合集储备</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===== 在此添加更多卡片 ===== -->
-    <!-- 复制上面的 creator-card 模板，替换 data-* 属性和卡片内容即可 -->
+
+    <div class="creator-card"
+         data-name="东曦"
+         data-platform="抖音"
+         data-category="电影"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">东</div>
+          <div class="creator-info">
+            <div class="creator-name">东曦 <span class="work-title">《《走进监狱的女人》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>436.6万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">编导演一体，专注女性话题</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">电影</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短片 · 现实</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">—</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">3100w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">1177.6w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">28.7w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7498460472342154530" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">故事聚焦多重女性现实苦难，单元故事独立完整，拓展空间大，叙事采用统一悲剧叙事模板，镜头写实克制</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才+作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">待建联确认</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="马赛克可可"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">马</div>
+          <div class="creator-info">
+            <div class="creator-name">马赛克可可 <span class="work-title">《《说明书商店》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>414.2万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">小雨互动 MCN 签约创作者，现居深圳，编导剪演一体，个人风格强烈鲜明，视频质量与更新频率稳定，平均每三个月可产出一部 5-8 分钟的故事短片</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 治愈</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《深夜食堂》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">34.4w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">0.5w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7642604076605213988" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">高概念空间设定，作品整体气质近似《深夜食堂》，温暖明亮、轻巧治愈，精准捕捉当代年轻人的情绪状态与生活困境</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="李永勤AIGC"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">李</div>
+          <div class="creator-info">
+            <div class="creator-name">李永勤AIGC <span class="work-title">《《暴风骤雨》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>2.7万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">AIGC/动画导演，剧本策划出身，《将夜》动画导演，有自己的AI团队</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短剧 · 悬疑</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《开端》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">25.4w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">0.6w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7604059167465719397" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">悬疑类型清晰，强反转叙事节奏紧凑，将市井灾难、现实危机、底层群像与人性群像相结合，且世界观闭环完整，不仅有危急情况下的人性叙事还有多条邻里、家庭支线可拓展</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-21</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="泫九"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">泫</div>
+          <div class="creator-info">
+            <div class="creator-name">泫九 <span class="work-title">《《归墟》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>72.6万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">AI 独立创作者，一专多能程度极高，题材偏好稳定，审美调性统一，内容能力强</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短剧 · 科幻</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《三体》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">5833.5w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">215w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">3.8w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/MS4wLjABAAAAHhHdOT0hE9G-8AbnlyUo-JMrTnCTMNHjeW6yI5kfDPT38o4Takviyn2Z9P6QxUb-/search/" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">高概念科幻赛道，世界观可持续延展，已验证千万级流量，社群传播力强</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-21</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="编导厉岑"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">编</div>
+          <div class="creator-info">
+            <div class="creator-name">编导厉岑 <span class="work-title">《《余烬之后》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>67.3万粉丝</span>
+              <span class="signed-badge">已签约-编剧首发约</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">个人AI创作者，创作风格与辨识度高，熟悉全流程AIGC制作</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短剧 · 科幻</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《爱，死亡与机器人》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">1亿</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">406w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">10.6w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/MS4wLjABAAAAHhHdOT0hE9G-8AbnlyUo-JMrTnCTMNHjeW6yI5kfDPT38o4Takviyn2Z9P6QxUb-?modal_id=7651228393647721771&amp;showSubTab=compilation" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">末世废土+科幻机甲+群像英雄，世界观完成度较高</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">已签约-编剧首发约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="画心月狐"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">画</div>
+          <div class="creator-info">
+            <div class="creator-name">画心月狐 <span class="work-title">《《丑狐》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>51.9万粉丝</span>
+              <span class="signed-badge">已签约-抖音（3日首发）</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">AI 独立创作者，专注改编以《聊斋志异》为原型的悬疑恐怖向短片，创作风格明确</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短片 · 志怪</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">—</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">140.1w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">2.3w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7650767139461065935" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">国风手绘AIGC动画，改编《聊斋志异》，复刻老上美影美术画风，原创词曲配乐，中式志怪恐怖美学，上下篇完整故事，国风动画辨识度极高</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-21</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">已签约-抖音（3日首发）</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="喜宙创意"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">喜</div>
+          <div class="creator-info">
+            <div class="creator-name">喜宙创意 <span class="work-title">《《诡墨堰骨》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>11.9万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">个人AI创作者，独立完成小说+剧本+制作的全流程创作</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短剧 · 志怪</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">—</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">2571.3</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">150w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">2.5w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7642269955974581531" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">类型清晰；故事内容具备较高的辨识度；系列化和世界观延展空间充足</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-21</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="叁生"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">叁</div>
+          <div class="creator-info">
+            <div class="creator-name">叁生 <span class="work-title">《《镇渊志》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>5.7万粉丝</span>
+              <span class="signed-badge">已签约-抖音（5日首发）</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">自创东方暗黑奇幻宇宙系列作品</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短片 · 民俗志怪</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《唐诡》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">20.9w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">0.4w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">0.04w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/MS4wLjABAAAAmdg_OVlQuAV77yBLueZBz4qGSBCotiYOigESaK4FqY0?from_tab_name=main&amp;modal_id=7642020229928848703" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">原创国风暗黑志怪，民俗诡案单元叙事，电影级古风悬疑质感</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才+作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">已签约-抖音（5日首发）</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="Mr.cobra"
+         data-platform="抖音"
+         data-category="电影"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">M</div>
+          <div class="creator-info">
+            <div class="creator-name">Mr.cobra <span class="work-title">《《甜蜜盛宴》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>0.5万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">个人创作者，片欧美超现实主义视觉风格</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">电影</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 现实主义</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">—</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">9.2w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">2120</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/MS4wLjABAAAAtwz8mFb-3CKgNQtGwLTnEfi-BmTN6dghlusH5YbbVfW9m6FIVOvd6YfxCGP5S7Mf?from_tab_name=main&amp;modal_id=7663120840799587627" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">质感真实，对标《肖申克的救赎》的画面质感</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="葵的精神世界"
+         data-platform="抖音"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">葵</div>
+          <div class="creator-info">
+            <div class="creator-name">葵的精神世界 <span class="work-title">《《我的遗憾》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>489.0万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">编导演一体，创意脑洞型，目前正在创作《Enemy》同类型短片</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 奇幻/情感</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《想见你》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">110.4</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">5.7w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/video/7411110313505918217" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">以无限时空轮回叙事，世界观完整，叙事节奏舒缓克制</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="江问渔渔渔"
+         data-platform="B站"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">江</div>
+          <div class="creator-info">
+            <div class="creator-name">江问渔渔渔 <span class="work-title">《《解构游戏》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge bilibili">B站</span>
+              <span>15.5万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">B站悬疑概念系列短片作者。《解构游戏》系列已连载。</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短片 · 悬疑</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《恐怖游戏社》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">133.3</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">50667</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">145</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.bilibili.com/video/BV1q2RQB5EyJ" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">把童年游戏做成规则怪谈，概念化叙事+系列结构，IP延展强；11分钟完整世界观搭建，概念执行力强。</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才+作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">待建联确认</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="肖西瓜"
+         data-platform="小红书"
+         data-category="剧集"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">肖</div>
+          <div class="creator-info">
+            <div class="creator-name">肖西瓜 <span class="work-title">《《本我之路》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge xiaohongshu">小红书</span>
+              <span>8.8万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">独立创作者，脑洞较大，擅长游戏感叙事，会用AE做游戏UI</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">剧集</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 科幻</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《头号玩家》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">10万+</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">0.2w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://browser.alibaba-inc.com/?Url=https%3A%2F%2Fxhslink.cn%2Fo%2F8GDsb0eEOFf" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">叙事年轻化，擅长游戏冒险，且能用AI+真人做结合叙事</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才+作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-21</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">待建联确认</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="小何同学"
+         data-platform="抖音"
+         data-category="电影"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">小</div>
+          <div class="creator-info">
+            <div class="creator-name">小何同学 <span class="work-title">《《如果爱忘了》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>3.7万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">非影视行业个人创作者，内容来源于网友投稿，真实故事改编，账号获赞158.3w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">电影</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 温情</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《寻梦环游记》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">90.7w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">2.3w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/MS4wLjABAAAAwI3AO5YpZCrqpL_fdwx0kJmU3Bc1eZz538mYgfLYkCTFTGcM6QnXV-URr0_vo5Ag?from_tab_name=main&amp;modal_id=7661150829201591578" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">收集粉丝的真实经历改编成为故事，作品温情动人令无数网友潸然泪腺</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-23</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="无敌星橙"
+         data-platform="抖音"
+         data-category="电影"
+         data-stage="跟进中"
+         data-status="绿灯-顺利"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">无</div>
+          <div class="creator-info">
+            <div class="creator-name">无敌星橙 <span class="work-title">《《最后的安魂曲》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge douyin">抖音</span>
+              <span>0.52万粉丝</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light green internal-only">
+            <span class="dot"></span>绿灯-顺利
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">狂揽20+国内外知名AI奖项，上影节北影节AI奖项大满贯</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">电影</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">短片 · 科幻</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《寻梦环游记》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">未知</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">合计13.7w</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">合计7600</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.douyin.com/user/self/search/" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">高概念思辨短片，打的是&quot;治愈+怅惘+哲思&quot;的复合情绪。</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">人才</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">未签约</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light green" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>绿灯-顺利
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">已建联</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="creator-card"
+         data-name="AMZHARBOUR"
+         data-platform="B站"
+         data-category="电影"
+         data-stage="跟进中"
+         data-status="黄灯-需评估"
+         data-owner="曹程鹏"
+         data-recommend="重点推荐">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="creator-avatar">A</div>
+          <div class="creator-info">
+            <div class="creator-name">AMZHARBOUR <span class="work-title">《《Project Alice｜爱丽丝计划》》</span></div>
+            <div class="creator-meta">
+              <span class="platform-badge bilibili">B站</span>
+              <span>0.3万粉丝</span>
+              <span class="signed-badge">已签约-新片场shotlab</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-right">
+          <span class="recommend-badge">重点推荐</span>
+          <span class="status-light yellow internal-only">
+            <span class="dot"></span>黄灯-需评估
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">主创简介</div>
+            <div class="info-value">新片场shotlab签约创作人。</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">匹配品类</div>
+            <div class="info-value">电影</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">分类 / 题材</div>
+            <div class="info-value">系列短片 · 科幻</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">对标作品</div>
+            <div class="info-value">《Her》《Ex Machina》</div>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">代表作播放量</div>
+            <div class="info-value">4.9</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">点赞数</div>
+            <div class="info-value">1971</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">评论数</div>
+            <div class="info-value">279</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">代表作品</div>
+            <div class="info-value"><a href="https://www.bilibili.com/video/BV1vM5t6rErn" target="_blank" rel="noopener">查看作品 &rarr;</a></div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-label">作品亮点</div>
+          <div class="box-content">故事概念简单却有较大的戏剧空间，短片节奏强劲层层反转，且审美较高。</div>
+        </div>
+
+        <div class="highlight-box" style="background:#fff7ed;border-color:#fed7aa;">
+          <div class="box-label" style="color:#9a3412;">推荐维度</div>
+          <div class="box-content" style="color:#7c2d12;">作品</div>
+        </div>
+      </div>
+
+      <div class="internal-section">
+        <div class="internal-grid">
+          <div class="internal-item">
+            <div class="internal-label">发现日期</div>
+            <div class="internal-value">2026-07-22</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">签约状态</div>
+            <div class="internal-value">已签约-新片场shotlab</div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">跟进阶段</div>
+            <div class="internal-value"><span class="stage-tag following">跟进中</span></div>
+          </div>
+          <div class="internal-item">
+            <div class="internal-label">状态</div>
+            <div class="internal-value">
+              <span class="status-light yellow" style="padding: 2px 8px; font-size: 11px;">
+                <span class="dot"></span>黄灯-需评估
+              </span>
+            </div>
+          </div>
+          <div class="internal-item" style="grid-column: span 2;">
+            <div class="internal-label">跟进备注</div>
+            <div class="internal-value">建联中</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -538,6 +2182,7 @@ function applyFilters() {
   var stage = document.getElementById('filter-stage').value;
   var owner = document.getElementById('filter-owner').value;
   var nameQuery = document.getElementById('filter-name').value.trim().toLowerCase();
+  var statusFilter = window._statusFilter || 'all';
 
   var cards = document.querySelectorAll('.creator-card');
   var count = 0;
@@ -549,6 +2194,7 @@ function applyFilters() {
     if (stage !== 'all' && card.dataset.stage !== stage) show = false;
     if (owner !== 'all' && card.dataset.owner !== owner) show = false;
     if (nameQuery && card.dataset.name.toLowerCase().indexOf(nameQuery) === -1) show = false;
+    if (statusFilter !== 'all' && card.dataset.status !== statusFilter) show = false;
 
     card.style.display = show ? '' : 'none';
     if (show) count++;
@@ -565,16 +2211,18 @@ function filterBy(type, value) {
     resetFilters();
     return;
   }
+  window._statusFilter = 'all';
   if (type === 'platform') {
     document.getElementById('filter-platform').value = value;
   } else if (type === 'status') {
-    // Find stage from status
+    window._statusFilter = value;
   }
   event.currentTarget.classList.add('active');
   applyFilters();
 }
 
 function resetFilters() {
+  window._statusFilter = 'all';
   document.getElementById('filter-platform').value = 'all';
   document.getElementById('filter-category').value = 'all';
   document.getElementById('filter-stage').value = 'all';
