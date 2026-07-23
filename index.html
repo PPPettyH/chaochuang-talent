@@ -282,6 +282,77 @@
     background: #e9d8fd; color: #553c9a;
   }
 
+  
+  /* Cover banner */
+  .card-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+  }
+  .card-cover .cover-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+  }
+  .card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .card-cover:hover img {
+    transform: scale(1.04);
+  }
+  .cover-overlay {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 40px 20px 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .cover-work-title {
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 0.5px;
+  }
+  .cover-play-btn {
+    background: rgba(255,255,255,0.95);
+    color: #1a202c;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .card-cover:hover .cover-play-btn {
+    background: #3182ce;
+    color: #fff;
+    transform: translateX(-2px);
+  }
+  .cover-placeholder-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fef3c7;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
   /* Back to top */
   #back-to-top {
     position: fixed; bottom: 30px; right: 30px;
@@ -422,6 +493,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.bilibili.com/video/BV1Em586XErN/?spm_id_from=333.788.recommend_more_video.18&amp;trackid=web_related_0.router-related-2589621-4d422.1784712065898.152&amp;vd_source=99c46f0c58a9aef16bb71aaf107b0cbb" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/都都沉Doc.jpg" alt="《换骨》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《换骨》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">都</div>
@@ -531,6 +612,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7498460472342154530" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/东曦.jpg" alt="《走进监狱的女人》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《走进监狱的女人》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">东</div>
@@ -640,6 +731,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7642604076605213988" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/马赛克可可.jpg" alt="《说明书商店》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《说明书商店》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">马</div>
@@ -749,6 +850,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7604059167465719397" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/李永勤AIGC.jpg" alt="《暴风骤雨》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《暴风骤雨》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">李</div>
@@ -858,6 +969,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAHhHdOT0hE9G-8AbnlyUo-JMrTnCTMNHjeW6yI5kfDPT38o4Takviyn2Z9P6QxUb-/search/" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/泫九.jpg" alt="《归墟》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《归墟》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          <span class="cover-placeholder-tag">示意图</span>
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">泫</div>
@@ -967,6 +1088,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAHhHdOT0hE9G-8AbnlyUo-JMrTnCTMNHjeW6yI5kfDPT38o4Takviyn2Z9P6QxUb-?modal_id=7651228393647721771&amp;showSubTab=compilation" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/编导厉岑.jpg" alt="《余烬之后》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《余烬之后》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">编</div>
@@ -1076,6 +1207,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7650767139461065935" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/画心月狐.jpg" alt="《丑狐》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《丑狐》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">画</div>
@@ -1185,6 +1326,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7642269955974581531" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/喜宙创意.jpg" alt="《诡墨堰骨》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《诡墨堰骨》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">喜</div>
@@ -1294,6 +1445,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAmdg_OVlQuAV77yBLueZBz4qGSBCotiYOigESaK4FqY0?from_tab_name=main&amp;modal_id=7642020229928848703" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/叁生.jpg" alt="《镇渊志》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《镇渊志》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">叁</div>
@@ -1403,6 +1564,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAtwz8mFb-3CKgNQtGwLTnEfi-BmTN6dghlusH5YbbVfW9m6FIVOvd6YfxCGP5S7Mf?from_tab_name=main&amp;modal_id=7663120840799587627" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/Mr_cobra.jpg" alt="《甜蜜盛宴》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《甜蜜盛宴》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">M</div>
@@ -1512,6 +1683,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/video/7411110313505918217" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/葵的精神世界.jpg" alt="《我的遗憾》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《我的遗憾》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">葵</div>
@@ -1621,6 +1802,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.bilibili.com/video/BV1q2RQB5EyJ" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/江问渔渔渔.jpg" alt="《解构游戏》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《解构游戏》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">江</div>
@@ -1730,6 +1921,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://browser.alibaba-inc.com/?Url=https%3A%2F%2Fxhslink.cn%2Fo%2F8GDsb0eEOFf" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/肖西瓜.jpg" alt="《本我之路》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《本我之路》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">肖</div>
@@ -1839,6 +2040,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAwI3AO5YpZCrqpL_fdwx0kJmU3Bc1eZz538mYgfLYkCTFTGcM6QnXV-URr0_vo5Ag?from_tab_name=main&amp;modal_id=7661150829201591578" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/小何同学.jpg" alt="《如果爱忘了》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《如果爱忘了》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">小</div>
@@ -1948,6 +2159,16 @@
          data-status="绿灯-顺利"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.douyin.com/user/self/search/" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/无敌星橙.jpg" alt="《最后的安魂曲》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《最后的安魂曲》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          <span class="cover-placeholder-tag">示意图</span>
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">无</div>
@@ -2057,6 +2278,16 @@
          data-status="黄灯-需评估"
          data-owner="曹程鹏"
          data-recommend="重点推荐">
+      <div class="card-cover">
+        <a href="https://www.bilibili.com/video/BV1vM5t6rErn" target="_blank" rel="noopener" class="cover-link">
+          <img src="covers/AMZHARBOUR.jpg" alt="《Project Alice｜爱丽丝计划》 封面" loading="lazy">
+          <div class="cover-overlay">
+            <div class="cover-work-title">《《Project Alice｜爱丽丝计划》》</div>
+            <div class="cover-play-btn">▶ 查看原视频</div>
+          </div>
+          
+        </a>
+      </div>
       <div class="card-header">
         <div class="card-header-left">
           <div class="creator-avatar">A</div>
